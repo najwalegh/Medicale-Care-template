@@ -10,6 +10,9 @@ import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 // variants
 import {fadeIn} from '../variants'
+import SpaceMedcin from '../pages/SpaceMedcin';
+import { Link } from 'react-router-dom';
+
 
 function Banner() {
   return (
@@ -50,17 +53,12 @@ function Banner() {
             >
               Bienvenue sur [Nom ] - Votre solution santé en ligne.<br /> Prenez des rendez-vous médicaux en toute simplicité, consultez des professionnels qualifiés, le tout depuis chez vous. 
             </motion.p>
+          <Link to="/medcins">
+            <button >RDV</button>
+          </Link>
           
-            {/* <motion.div 
-            variants={fadeIn('up',0.6)}
-            initial='hidden'
-            whileInView={'show'}
-            viewport={{once:false,amount:0.7}}className='flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0'>
-              <button className='btn btn-lg'>Contact me</button>
-              <a href='#' className='text-gradient btn-link'>My Portfolio</a>
-            </motion.div> */}
 
-            <motion.div 
+            {/* <motion.div 
             variants={fadeIn('up',0.7)}
             initial='hidden'
             whileInView={'show'}
@@ -69,7 +67,7 @@ function Banner() {
               <a href='#'><FaMobileAlt /></a>
               <a href='#'><FaGithub /></a>
               <a href='#'><FaInstagram /></a>
-            </motion.div>
+            </motion.div> */}
 
           </div>
 

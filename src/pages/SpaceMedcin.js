@@ -5,7 +5,6 @@ import Header from '../components/Header';
 function SpaceMedcin() {
   return (
     <div>
-        <Header/>
         <Banner />
     </div>
   );
