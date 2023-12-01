@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// @type {import('tailwindcss').Config} 
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
@@ -20,11 +20,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#0a0a0a',
-        accent: '#B809C3',
+        primary: '#777777',
+        accent: '#127eb9',
       },
       backgroundImage: {
-        site: "url('./assets/site-bg.jpeg')",
+        site: "url('./assets/Rainbow.png')",
         // about: "url('./assets/about.png')",
         // services: "url('./assets/services.png')",
       },
