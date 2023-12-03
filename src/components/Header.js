@@ -12,7 +12,7 @@ function Header() {
         </a>
         <div>
         {/* {button} */}
-        <button className=' btn-lg'>Connexion</button>
+        <button className='btn-lg'>Connexion</button>
         <button className='btn-lg'>Inscription</button>
         </div>
 
