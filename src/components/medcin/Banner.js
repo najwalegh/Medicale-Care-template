@@ -6,8 +6,13 @@ function Banner() {
   const [showInfo, setShowInfo] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/medcins').then((Response) => {
+    const idService="123"
+    axios.get(`http://localhost:8080/api/medcins/${idService}`).then((Response) => {
+      console.log('Réponse du serveur:', Response.data);
       setMedcinList(Response.data);
+    })
+    .catch((error) => {
+      console.error('Erreur lors de la requête:', error);
     });
   }, []);
 
