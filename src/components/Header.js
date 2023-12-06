@@ -1,25 +1,30 @@
-import React from 'react'
-import logo from '../assets/logo.png'
+import React from "react";
+import logo from "../assets/logo.png";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className=''>
-    <div className='container mx-auto'>
-      <div className='flex justify-between items-center'>
-        {/* {LOGO} */}
-        <a href='#'>
-          <img src={logo} alt='logo' style={{width:80}}></img>
-        </a>
-        <div>
-        {/* {button} */}
-        <button className=' btn-lg'>Connexion</button>
-        <button className='btn-lg'>Inscription</button>
+    <header className="border-b-2">
+      <div className="container mx-auto border-none">
+        <div className="flex justify-between items-center">
+          {/* {LOGO} */}
+          <a href="#">
+            <img src={logo} alt="logo" style={{ width: 80 }}></img>
+          </a>
+          <div>
+            {/* {button} */}
+            <Link to={"/sign-in"}>
+              <button className=" btn-lg text-black">Sign In</button>
+            </Link>
+            <Link to={"/sign-up"}>
+              <button className="btn-lg text-black">Sign Up</button>
+            </Link>
+          </div>
         </div>
-
       </div>
-    </div>
-  </header>
-  )
+    </header>
+  );
 }
 
-export default Header
+export default Header;
