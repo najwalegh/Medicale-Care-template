@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="border-b-2">
+    <header >
       <div className="container mx-auto border-none">
         <div className="flex justify-between items-center">
           {/* {LOGO} */}
@@ -15,10 +15,10 @@ function Header() {
           <div>
             {/* {button} */}
             <Link to={"/sign-in"}>
-              <button className=" btn-lg text-black">Sign In</button>
+              <button className=" btn-lg ">Sign In</button>
             </Link>
             <Link to={"/sign-up"}>
-              <button className="btn-lg text-black">Sign Up</button>
+              <button className="btn-lg ">Sign Up</button>
             </Link>
           </div>
         </div>
