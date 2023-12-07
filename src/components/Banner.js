@@ -2,7 +2,6 @@
 import React from "react";
 //image
 import Image from "../assets/logo.png";
-
 // annimation
 import { TypeAnimation } from "react-type-animation";
 // motion
