@@ -1,17 +1,22 @@
-import './App.css';
-import Header from './components/Header';
-import Banner from './components/Banner';
-import Nav from './components/Nav';
-import Features from './components/Features';
-import Footer from './components/Footer';
-import Services from './pages/Patient/servicesPage';
-import AppRoutes from './routes';
-function App() {
-  return (
-    <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
-      <AppRoutes />
-    </div>
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SpaceMedcin from "./pages/Patient/medcinsPage";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./pages/Common/HomePage";
+import LoginPage from "./pages/Authentification/LoginPage";
+import RegisterPage from "./pages/Authentification/RegisterPage";
+import Services from "./pages/Patient/servicesPage";
+import { AuthProvider } from "./context/AuthContextProvider";
+import AppRoutes from "./routes";
 
+const App = () => {
+  return (
+    <AuthProvider>
+        <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
+          <AppRoutes />
+        </div>
+    </AuthProvider>
   );
 };
 
