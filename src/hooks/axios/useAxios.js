@@ -7,7 +7,7 @@ export const useAxios = () => {
 
   const axiosInstance = axios.create({
     baseURL:
-      process.env.REACT_APP_VITE_API_BASE_URL ?? "http://localhost:8081/api",
+      process.env.REACT_APP_VITE_API_BASE_URL ?? "http://localhost:8080/api",
   });
   axiosInstance.interceptors.request.use((config) => {
     config.headers.Authorization = `Bearer ${userToken.accessToken}`;

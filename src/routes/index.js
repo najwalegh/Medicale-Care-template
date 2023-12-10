@@ -5,6 +5,7 @@ import SpaceMedcin from "../pages/Patient/medcinsPage";
 import LoginPage from "../pages/Authentification/LoginPage";
 import RegisterPage from "../pages/Authentification/RegisterPage";
 import { LogoutPage } from "../pages/Authentification/LogoutPage";
+import Rdv from "../pages/Patient/rdvPage";
 
 function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ function AppRoutes() {
         <Route path="/sign-up" element={<RegisterPage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/logout" element={<LogoutPage />} />
+        <Route path="/rdv" element={<Rdv />} />
       </Routes>
     </BrowserRouter>
   );
