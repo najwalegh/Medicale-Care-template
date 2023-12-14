@@ -11,7 +11,6 @@ import { AlertError } from "../../components/utils/AlertError";
 function Rdv() {
     const { data, loading, error, performRdv } = useGetRdv();
     
-
     useEffect(() => {
         performRdv();
         if (data) {
@@ -40,13 +39,11 @@ function Rdv() {
           />
         </div>
       )}
-      {data &&
-        data.length > 0 &&
-        console.log("avant cal"+data) &&
+      {/* {alert('data'+data.length)} */}
+      {
+      data &&
             <MyCalendar data={data}/>
-        
       }
-         
           <Footer />
         </>
       );
