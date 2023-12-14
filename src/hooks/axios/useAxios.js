@@ -1,14 +1,16 @@
 import axios from "axios";
-import { useTokenContext } from "../../context/AuthContextProvider";
 
 export const useAxios = () => {
-  const { token } = useTokenContext();
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_BASE_URL,
-  });
+  const token = localStorage.getItem("token");
+  const userToken = JSON.parse(token);
+  console.log("token, ", userToken);
 
+  const axiosInstance = axios.create({
+    baseURL:
+      process.env.REACT_APP_API_BASE_URL,
+  });
   axiosInstance.interceptors.request.use((config) => {
-    config.headers.Authorization = `Bearer ${token.accessToken}`;
+    config.headers.Authorization = `Bearer ${userToken.accessToken}`;
     return config;
   });
   return axiosInstance;

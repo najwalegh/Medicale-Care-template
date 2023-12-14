@@ -3,17 +3,16 @@ import { useState } from "react";
 import { useAxios } from "../axios/useAxios";
 
 const service = async (axios) => {
-  const response = await axios.get(ENDPOINTS.SERVICE);
+  const response = await axios.get(`${ENDPOINTS.SERVICE}`);
   return response;
 };
 
 export const useGetService = () => {
-
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const { axiosInstance } = useAxios();
+  const axiosInstance = useAxios();
 
   const performService = async () => {
     try {
@@ -26,12 +25,10 @@ export const useGetService = () => {
       setLoading(false);
     }
   };
-
-  // Call the service when the hook is first executed
-  performService();
   return {
     data,
     error,
     loading,
-  };
+    performService,
+  };
 };

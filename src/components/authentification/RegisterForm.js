@@ -31,9 +31,9 @@ const RegisterForm = ({ loading, performRegister }) => {
   };
   return (
     <>
-      <div className="p-10 bg-white rounded-xl  shadow-lg space-x-4">
+      <div className="p-10 bg-white rounded-xl w-full shadow-lg space-x-4">
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex justify-between mb-5">
+          <div className="flex justify-between space-x-4 mb-5">
             <div>
               <Input
                 name="firstName"
@@ -63,7 +63,7 @@ const RegisterForm = ({ loading, performRegister }) => {
               regex={/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/}
             />
           </div>
-          <div className="flex justify-between mb-5">
+          <div className="flex justify-between space-x-4 mb-5">
             <div>
               <Input
                 name="password"
@@ -104,46 +104,32 @@ const RegisterForm = ({ loading, performRegister }) => {
             />
           </div>
 
-          <div className="mb-3">
+          <div className="mb-5">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               Your gender
             </label>
-            <div
+            <select
               className={`flex border ${
-                formState?.errors?.gender?.message
-                  ? `border-red-500`
-                  : `border-gray-400`
-              } rounded w-full text-gray-500 p-1 leading-tight focus:outline-none`}
+                formState?.errors?.gender ? "border-red-500" : "border-gray-400"
+              } rounded w-full h-196 text-gray-500 p-1 leading-tight focus:outline-none`}
+              {...register("gender", { required: "Please select a gender" })}
             >
-              <InputRadio
-                name="gender"
-                id="female"
-                label="FEMALE"
-                register={register}
-              />
-              <InputRadio
-                name="gender"
-                id="Male"
-                label="MALE"
-                register={register}
-              />
-            </div>
+              <option value="">Select</option>
+              <option value="MALE">Male</option>
+              <option value="FEMALE">Female</option>
+            </select>
             <span className="text-red-500">
               {formState?.errors?.gender?.message}
             </span>
           </div>
 
           <div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-            >
+            <button type="submit" disabled={loading} className="btn btn-lg w-full rounded-lg mb-2">
               send
             </button>
           </div>
 
-          <p className="text-md font-light text-gray-500 dark:text-gray-400">
+          <p className="text-sm font-light text-gray-500 dark:text-gray-400">
             Already have an account yet?{" "}
             <Link
               to={"/sign-in"}

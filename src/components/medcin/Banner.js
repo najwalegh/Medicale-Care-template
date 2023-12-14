@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-function Banner() {
+
+function Banner({serviceId}) {
   const [medcinList, setMedcinList] = useState([]);
   const [showInfo, setShowInfo] = useState(null);
 
   useEffect(() => {
-    const idService="123"
-    axios.get(`http://localhost:8080/api/medcins/${idService}`).then((Response) => {
+    axios.get(`http://localhost:8080/api/medcins/${serviceId}`).then((Response) => {
       console.log('Réponse du serveur:', Response.data);
       setMedcinList(Response.data);
     })
