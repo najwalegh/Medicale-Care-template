@@ -105,10 +105,11 @@ const RegisterForm = ({ loading, performRegister }) => {
           </div>
 
           <div className="mb-3">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label className="block mb-2 text-primary font-medium text-gray-900 dark:text-white">
               Your gender
             </label>
             <select
+              style={{ height: "50px" }}
               className={`flex border ${
                 formState?.errors?.gender ? "border-red-500" : "border-gray-400"
               } rounded w-full h-196 text-gray-500 p-1 leading-tight focus:outline-none`}
@@ -124,7 +125,11 @@ const RegisterForm = ({ loading, performRegister }) => {
           </div>
 
           <div>
-            <button type="submit" disabled={loading} className="btn btn-lg">
+            <button
+              type="submit"
+              disabled={loading}
+              className="btn btn-lg w-full mt-6 hover:text-primary hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+            >
               send
             </button>
           </div>
