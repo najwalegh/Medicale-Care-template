@@ -6,6 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 // motion
 import { motion } from "framer-motion";
 // variants
+
 import { fadeIn } from "../variants";
 import { Link } from "react-router-dom";
 
@@ -16,8 +17,8 @@ function Banner({ token }) {
       id="home"
     >
       <div className="container mx-auto ">
-        <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
-          <div className='flex-1 text-center  lg:text-left mt-10 '>
+        <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
+          <div className="flex-1 text-center font-secondary lg:text-left mt-10 ">
             <motion.h1
               variants={fadeIn("up", 0.4)}
               initial="hidden"

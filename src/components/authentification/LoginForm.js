@@ -41,7 +41,7 @@ const LoginForm = ({ loading, performLogin }) => {
               <div className="mb-1">
                 <a
                   href="#"
-                  className="text-sm font-medium text-black hover:underline dark:text-primary-500"
+                  className="text-sm text-primary font-medium text-black hover:underline dark:text-primary-500"
                 >
                   Forgot password?
                 </a>
