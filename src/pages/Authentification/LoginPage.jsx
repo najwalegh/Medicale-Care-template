@@ -23,8 +23,8 @@ export default function LoginPage() {
   return (
     <>
       <Header />
-      <div className="grid grid-cols-1 md:grid-cols-2 h-screen content-baseline">
-        <div className="flex flex-col ml-6 mt-6 md:grid-cols-1">
+      <div className=" container mx-auto grid grid-cols-1 md:grid-cols-2 h-screen content-baseline">
+        <div className="flex flex-col md:grid-cols-1">
           <HeaderForm
             title={"SIGN-IN"}
             description={"Enter Your Information to log in"}

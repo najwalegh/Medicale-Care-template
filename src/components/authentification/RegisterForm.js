@@ -33,7 +33,7 @@ const RegisterForm = ({ loading, performRegister }) => {
     <>
       <div className="p-10 bg-white rounded-xl w-full shadow-lg space-x-4">
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex justify-between mb-5">
+          <div className="flex justify-between space-x-4 mb-5">
             <div>
               <Input
                 name="firstName"
@@ -63,7 +63,7 @@ const RegisterForm = ({ loading, performRegister }) => {
               regex={/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/}
             />
           </div>
-          <div className="flex justify-between mb-5">
+          <div className="flex justify-between space-x-4 mb-5">
             <div>
               <Input
                 name="password"
@@ -104,12 +104,11 @@ const RegisterForm = ({ loading, performRegister }) => {
             />
           </div>
 
-          <div className="mb-3">
-            <label className="block mb-2 text-primary font-medium text-gray-900 dark:text-white">
+          <div className="mb-5">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               Your gender
             </label>
             <select
-              style={{ height: "50px" }}
               className={`flex border ${
                 formState?.errors?.gender ? "border-red-500" : "border-gray-400"
               } rounded w-full h-196 text-gray-500 p-1 leading-tight focus:outline-none`}
@@ -125,16 +124,12 @@ const RegisterForm = ({ loading, performRegister }) => {
           </div>
 
           <div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="btn btn-lg w-full mt-6 hover:text-primary hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
-            >
+            <button type="submit" disabled={loading} className="btn btn-lg w-full rounded-lg mb-2">
               send
             </button>
           </div>
 
-          <p className="text-md font-light text-gray-500 dark:text-gray-400">
+          <p className="text-sm font-light text-gray-500 dark:text-gray-400">
             Already have an account yet?{" "}
             <Link
               to={"/sign-in"}

@@ -13,6 +13,7 @@ import { EffectCoverflow, Pagination, Mousewheel } from "swiper/modules";
 import { useGetService } from "../../hooks/services/useGetService";
 import { Spinner } from "../../components/utils/Spinner";
 import { AlertError } from "../../components/utils/AlertError";
+import { Link } from "react-router-dom";
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -100,9 +101,10 @@ function Services() {
               <p className="text-center text-base pb-3">
                 {service.description}
               </p>
-              <button className="btn-sm bg-accent text-base px-4 py-2 rounded-full">
-                Voir plus
-              </button>
+              <Link to={`/medcins`}
+              state={{serviceId: service._id}} >
+                <button className="btn-sm bg-accent text-base px-4 py-2 rounded-full"> Voir plus</button>
+              </Link>
             </SwiperSlide>
           ))}
       </Swiper>

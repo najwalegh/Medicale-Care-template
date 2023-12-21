@@ -15,13 +15,8 @@
 }
 
 .btn:hover {
-  background: linear-gradient(
-    92.23deg,
-    #5680e9ff 21.43%,
-    #84ceebff 50.63%,
-    #c1c8e4ff 100%,
-    #e7d1e5ff 117.04%
-  );
+  background: 
+    #5680e9ff 100%
 }
 
 .gradient,

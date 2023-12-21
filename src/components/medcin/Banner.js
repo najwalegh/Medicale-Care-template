@@ -1,36 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useGetMedcin } from "../../hooks/medcins/useGetMedcin";
+import { useParams } from 'react-router-dom';
 
-function Banner() {
+
+function Banner({serviceId,data}) {
   const [medcinList, setMedcinList] = useState([]);
   const [showInfo, setShowInfo] = useState(null);
 
-  // useEffect(() => {
-  //   const idService="123"
-  //   axios.get(`http://localhost:8080/api/medcins/${idService}`).then((Response) => {
-  //     console.log('Réponse du serveur:', Response.data);
-  //     setMedcinList(Response.data);
-  //   })
-  //   .catch((error) => {
-  //     console.error('Erreur lors de la requête:', error);
-  //   });
-  // }, []);
-  const { data, loading, error, performService } = useGetMedcin();
-
-  useEffect(() => {
-    performService();
-    if (data) {
-      console.log("data from sevice : ", data);
-    }
-    if (error) {
-      console.log("error : ", error);
-    }
-  }, []);
-
   return (
     <ul className='flex flex-wrap justify-center'>
-      {data.map((medcin, index) => (
+      {data && data.length && data.map((medcin, index) => (
         <li key={index} className='m-4 p-4 bg-white shadow-md rounded-md w-64'>
           <div className='flex flex-col items-center'>
             <img src={require('../../assets/logo.png')} className='w-full h-40 object-cover rounded-md' alt={medcin.role} />

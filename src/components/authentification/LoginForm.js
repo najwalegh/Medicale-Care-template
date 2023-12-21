@@ -50,7 +50,7 @@ const LoginForm = ({ loading, performLogin }) => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn btn-lg w-full  hover:text-primary hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+                  className="btn btn-lg w-full rounded-lg mb-2"
                 >
                   send
                 </button>
