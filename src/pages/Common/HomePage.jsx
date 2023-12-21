@@ -7,10 +7,9 @@ import { useTokenContext } from "../../context/AuthContextProvider";
 function Home() {
   const { token } = useTokenContext();
   return (
-    <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
+    <div>
       <Header />
       <Banner token={token} />
-      {/* <Nav /> */}
       <Features />
       <Footer />
     </div>

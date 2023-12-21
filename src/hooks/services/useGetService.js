@@ -25,7 +25,6 @@ export const useGetService = () => {
       setLoading(false);
     }
   };
-
   return {
     data,
     error,
