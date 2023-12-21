@@ -3,10 +3,8 @@ import { useState } from "react";
 import { useAxios } from "../axios/useAxios";
 
 const medcin = async (axios,serviceId) => {
-  console.log("www ",ENDPOINTS.MEDCINLIST,`/${serviceId}/service`);
-
-  const response = await axios.get(`${ENDPOINTS.MEDCINLIST}/${idService}/service`);
-  console.log("sending ");
+  const response = await axios.get(`${ENDPOINTS.MEDCINLIST}/${serviceId}/service`);
+  console.log("sending ",response);
   return response;
 };
 
