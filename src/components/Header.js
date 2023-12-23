@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { useTokenContext } from "../context/AuthContextProvider";
 
-function Header() {
+function Header({ childreen }) {
   const { token } = useTokenContext();
   return (
     <header>
@@ -14,18 +14,21 @@ function Header() {
             <img src={logo} alt="logo" style={{ width: 80 }}></img>
           </Link>
           {!token && (
-            <div>
-              {/* {button} */}
-              <Link to={"/sign-in"}>
-                <button className=" btn-lg ">Connexion</button>
-              </Link>
-              <Link to={"/sign-up"}>
-                <button className="btn-lg ">Inscription</button>
-              </Link>
-            </div>
+            <>
+              <div>
+                {/* {button} */}
+                <Link to={"/sign-in"}>
+                  <button className=" btn-lg ">Connexion</button>
+                </Link>
+                <Link to={"/sign-up"}>
+                  <button className="btn-lg ">Inscription</button>
+                </Link>
+              </div>
+            </>
           )}
           {token && (
             <div>
+              {childreen && childreen}
               <button className="btn-lg">Session</button>
               <Link to={"/logout"}>
                 <button className="btn-lg ">Déconnexion</button>

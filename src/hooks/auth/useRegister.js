@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { ENDPOINTS } from "../EndPoints";
 import axios from "axios";
+import { useMutation } from "@tanstack/react-query";
 
 const register = async (axios, form) => {
   const config = {
@@ -13,28 +13,14 @@ const register = async (axios, form) => {
 };
 
 export const useRegister = () => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-
   const axiosInstance = axios.create({
     baseURL: process.env.REACT_APP_API_BASE_URL,
   });
-  const performRegister = async (formData) => {
-    try {
-      setLoading(true);
-      const result = await register(axiosInstance, formData);
-      setData(result?.data);
-    } catch (error) {
-      setError(error.response?.data);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const insertUserMutation = useMutation({
+    mutationFn: (formData) => register(axiosInstance, formData),
+  });
+
   return {
-    data,
-    error,
-    loading,
-    performRegister,
+    insertUserMutation,
   };
 };
