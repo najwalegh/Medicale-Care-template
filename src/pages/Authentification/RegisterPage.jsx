@@ -25,8 +25,8 @@ export default function RegisterPage() {
   return (
     <>
       <Header />
-      <div className="grid grid-cols-1 md:grid-cols-2 content-baseline">
-        <div className="grid-cols-8 ml-6 mt-6 md:grid-cols-1 ">
+      <div className=" container mx-auto grid grid-cols-1 md:grid-cols-2 content-baseline">
+        <div className="grid-cols-8  md:grid-cols-1 ">
           <HeaderForm title={"SIGN-UP"} description={"Fill All The field !"} />
           <RegisterForm
             insertUserMutation={performRegister}

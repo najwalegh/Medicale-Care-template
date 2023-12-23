@@ -2,22 +2,24 @@ import { ENDPOINTS } from "../EndPoints";
 import { useState } from "react";
 import { useAxios } from "../axios/useAxios";
 
-const service = async (axios) => {
-  const response = await axios.get(`${ENDPOINTS.SERVICE}`);
+const medcin = async (axios,serviceId) => {
+  const response = await axios.get(`${ENDPOINTS.MEDCINLIST}/${serviceId}/service`);
+  console.log("sending ",response);
   return response;
 };
 
-export const useGetService = () => {
+export const useGetMedcin = () => {
   const [data, setData] = useState(null);
+
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const axiosInstance = useAxios();
 
-  const performService = async () => {
+  const performService = async (serviceId) => {
     try {
       setLoading(true);
-      const result = await service(axiosInstance);
+      const result = await medcin(axiosInstance,serviceId);
       setData(result?.data);
     } catch (error) {
       setError(error.response?.data);
@@ -25,6 +27,7 @@ export const useGetService = () => {
       setLoading(false);
     }
   };
+
   return {
     data,
     error,

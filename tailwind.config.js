@@ -1,4 +1,4 @@
-// @type {import('tailwindcss').Config} 
+// @type {import('tailwindcss').Config}
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -23,8 +23,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#777777",
-        accent: "#127eb9",
+        primary: "#777777", //gris
+        accent: "#127eb9", // bleu
       },
       backgroundImage: {
         site: "url('./assets/Rainbow.png')",

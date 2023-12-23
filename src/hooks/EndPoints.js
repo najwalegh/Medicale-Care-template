@@ -5,4 +5,5 @@ export const ENDPOINTS = {
   MEDCINLIST: "/medcin",
   CONSULTS: "/consultations",
   USERS: "/users",
+  MEDCINLIST: "/medcins",
 };
