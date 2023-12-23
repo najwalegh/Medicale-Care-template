@@ -39,7 +39,6 @@ function Rdv() {
           />
         </div>
       )}
-      {/* {alert('data'+data.length)} */}
       {
       data &&
             <MyCalendar data={data}/>
