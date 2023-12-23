@@ -36,14 +36,11 @@ export const ConsultationsPage = () => {
   useEffect(() => {
     const filtered = consultations.filter((consultation) => {
       const consultationDate = consultation.start_date.split("T")[0];
-      if (selectedTab === "all") {
-        return consultationDate === value.startDate;
-      } else {
-        return (
-          (selectedTab === consultation.status || selectedTab === "all") &&
-          consultationDate === value.startDate
-        );
-      }
+
+      return (
+        (selectedTab === consultation.status || selectedTab === "all") &&
+        (consultationDate === value.startDate || value.startDate === null)
+      );
     });
 
     setFilteredConsultations(filtered);
