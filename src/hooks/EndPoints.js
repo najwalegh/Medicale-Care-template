@@ -2,5 +2,7 @@ export const ENDPOINTS = {
   LOGIN: "/auth/login",
   REGISTER: "/auth/register",
   SERVICE: "/services",
-  MEDCINLIST: "/medcin"
+  MEDCINLIST: "/medcin",
+  CONSULTS: "/consultations",
+  USERS: "/users",
 };

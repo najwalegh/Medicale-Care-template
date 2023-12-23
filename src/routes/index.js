@@ -8,6 +8,7 @@ import { LogoutPage } from "../pages/Authentification/LogoutPage";
 import { MainPage } from "../pages/Medecin/MainPage";
 import { RenderToMedecin } from "../components/RenderToMedecin";
 import { useTokenContext } from "../context/AuthContextProvider";
+import { ConsultationsPage } from "../pages/Medecin/ConsultationsPage";
 
 function AppRoutes() {
   const { token } = useTokenContext();
@@ -31,6 +32,16 @@ function AppRoutes() {
         <Route path="/sign-up" element={<RegisterPage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/logout" element={<LogoutPage />} />
+        <Route
+          path="/consultations"
+          element={
+            <RenderToMedecin role={token?.user?.role}>
+              {" "}
+              <ConsultationsPage />
+            </RenderToMedecin>
+          }
+        />
+
         <Route
           path="/medecinPage"
           element={

@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Input from "../utils/InputBlock";
 
-const LoginForm = ({ loading, performLogin }) => {
+const LoginForm = ({ performLogin, loading }) => {
   const { register, handleSubmit, formState, reset } = useForm({
     email: "",
     password: "",
@@ -11,7 +11,6 @@ const LoginForm = ({ loading, performLogin }) => {
   const onSubmit = (formData) => {
     performLogin(formData);
     reset();
-    alert("Form submitted!");
   };
   return (
     <>

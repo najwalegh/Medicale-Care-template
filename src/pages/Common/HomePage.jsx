@@ -6,10 +6,24 @@ import Footer from "../../components/Footer";
 import { useTokenContext } from "../../context/AuthContextProvider";
 function Home() {
   const { token } = useTokenContext();
+  const description =
+    "Prenez des rendez-vous médicaux en toute simplicité,consultez des professionnels qualifiés, le tout depuis chez vous.";
+  const services = [
+    "Facilitez votre parcours de santé",
+    "Conseils médicaux",
+    "Contrôlez votre bien-être",
+  ];
   return (
     <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
       <Header />
-      <Banner token={token} />
+      <Banner
+        token={token}
+        title={"Votre santé notre priorité"}
+        description={description}
+        btnText={"Prendre un Rendez-Vous"}
+        btnLink={"/services"}
+        services={services}
+      />
       {/* <Nav /> */}
       <Features />
       <Footer />
