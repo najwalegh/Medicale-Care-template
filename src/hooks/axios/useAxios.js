@@ -3,7 +3,6 @@ import axios from "axios";
 export const useAxios = () => {
   const token = localStorage.getItem("token");
   const userToken = JSON.parse(token);
-  console.log("token, ", userToken);
 
   const axiosInstance = axios.create({
     baseURL:

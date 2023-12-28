@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Banner from '../../components/medcin/Banner';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { useLocation } from "react-router-dom";
+import { useGetMedcin } from '../../hooks/medcins/useGetMedcin';
 
 
 function SpaceMedcin() {
   const location = useLocation();
   const {serviceId} =location.state ?? {serviceId : null}
+  
+  const { data, loading, error, performService } = useGetMedcin();
+
+useEffect(() => {
+  performService(serviceId);
+
+  if (data) {
+    console.log("data from sevice : ", data);
+  }
+  if (error) {
+    console.log("error : ", error);
+  }
+}, []);
+
+ 
   return (
     <div>
         <Header />
@@ -20,7 +36,7 @@ function SpaceMedcin() {
           </div>
         </div>
       </div>
-        <Banner serviceId={serviceId}/>
+        <Banner data={data} serviceId={serviceId}/>
         <Footer />
     </div>
   );

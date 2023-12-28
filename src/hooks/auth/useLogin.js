@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ENDPOINTS } from "../EndPoints";
-import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 
 const login = async (axios, form) => {
   const config = {
@@ -13,28 +13,14 @@ const login = async (axios, form) => {
 };
 
 export const useLogin = () => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-
   const axiosInstance = axios.create({
     baseURL: process.env.REACT_APP_API_BASE_URL,
   });
-  const performLogin = async (formData) => {
-    try {
-      setLoading(true);
-      const result = await login(axiosInstance, formData);
-      setData(result?.data);
-    } catch (error) {
-      setError(error.response?.data);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const loginUserMutation = useMutation({
+    mutationFn: (formData) => login(axiosInstance, formData),
+  });
+
   return {
-    data,
-    error,
-    loading,
-    performLogin,
+    loginUserMutation,
   };
 };

@@ -8,7 +8,8 @@ import { LogoutPage } from "../pages/Authentification/LogoutPage";
 import { MainPage } from "../pages/Medecin/MainPage";
 import { RenderToMedecin } from "../components/RenderToMedecin";
 import { useTokenContext } from "../context/AuthContextProvider";
-import Consultation from "../pages/Medecin/prescription";
+import Prescription from "../pages/Medecin/Prescription";
+import { ConsultationsPage } from "../pages/Medecin/ConsultationsPage";
 
 function AppRoutes() {
   const { token } = useTokenContext();
@@ -33,6 +34,16 @@ function AppRoutes() {
         <Route path="/services" element={<Services />} />
         <Route path="/logout" element={<LogoutPage />} />
         <Route
+          path="/consultations"
+          element={
+            <RenderToMedecin role={token?.user?.role}>
+              {" "}
+              <ConsultationsPage />
+            </RenderToMedecin>
+          }
+        />
+
+        <Route
           path="/medecinPage"
           element={
             <RenderToMedecin role={token?.user?.role}>
@@ -40,7 +51,7 @@ function AppRoutes() {
             </RenderToMedecin>
           }
         />
-        <Route path="/step" element={<Consultation />}/>
+        <Route path="/step" element={<Prescription />}/>
       </Routes>
     </BrowserRouter>
   );

@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { Link } from "react-router-dom";
 
-function Banner({ token }) {
+function Banner({ token, title, description, btnText, btnLink, services }) {
   return (
     <section
       className="min-h-[85vh] lg:min-h-[78vh] flex items-center"
@@ -26,7 +26,7 @@ function Banner({ token }) {
               viewport={{ once: false, amount: 0.7 }}
               className="text-[55px] font-bold leading-[0.8] lg:text-[110px] "
             >
-              <span> Votre santé notre priorité</span>
+              <span>{title}</span>
             </motion.h1>
             <motion.div
               variants={fadeIn("up", 0.3)}
@@ -38,11 +38,11 @@ function Banner({ token }) {
               {/* <span className=' text-white mr-4'>I am a</span> */}
               <TypeAnimation
                 sequence={[
-                  "Facilitez votre parcours de santé",
+                  services[0],
                   1000,
-                  "Conseils médicaux",
+                  services[1],
                   1000,
-                  "Contrôlez votre bien-être",
+                  services[2],
                   1000,
                 ]}
                 speed={50}
@@ -60,8 +60,8 @@ function Banner({ token }) {
               className="mb-8 max-w-lg max-auto lg:mx-0"
             >
               Bienvenue sur <b>MHP</b> - Votre solution santé en ligne.
-              <br /> Prenez des rendez-vous médicaux en toute simplicité,
-              consultez des professionnels qualifiés, le tout depuis chez vous.
+              <br />
+              {description}
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.6)}
@@ -71,13 +71,13 @@ function Banner({ token }) {
               className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0"
             >
               {token && (
-                <Link to={"/services"}>
-                  <button className="btn btn-lg">Prendre un Rendez-Vous</button>
+                <Link to={btnLink}>
+                  <button className="btn btn-lg">{btnText}</button>
                 </Link>
               )}
               {!token && (
                 <Link to={"/sign-in"}>
-                  <button className="btn btn-lg">Prendre un Rendez-Vous</button>
+                  <button className="btn btn-lg">{btnText}</button>
                 </Link>
               )}
             </motion.div>

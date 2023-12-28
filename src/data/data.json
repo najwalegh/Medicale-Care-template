@@ -1,0 +1,530 @@
+[
+  {
+    "NOM": "URO / EAU POUR IRRIGATION",
+    "CODE": "AB12CD"
+  },
+  {
+    "NOM": "ELOXATINE 5 MG/ML",
+    "CODE": "CD34EF"
+  },
+  {
+    "NOM": "VIVALAN",
+    "CODE": "EF56GH"
+  },
+  {
+    "NOM": "ZADRYL",
+    "CODE": "GH78IJ"
+  },
+  {
+    "NOM": "MYNAZOL",
+    "CODE": "IJ90KL"
+  },
+  {
+    "NOM": "ALFACEFAL 125 MG/5 ML",
+    "CODE": "KL12MN"
+  },
+  {
+    "NOM": "NOCAND 50 MG",
+    "CODE": "MN34OP"
+  },
+  {
+    "NOM": "MEDIATOR",
+    "CODE": "OP56QR"
+  },
+  {
+    "NOM": "GASTROLIBER",
+    "CODE": "QR78ST"
+  },
+  {
+    "NOM": "CLOFENE",
+    "CODE": "ST90UV"
+  },
+  {
+    "NOM": "ZELDOX",
+    "CODE": "UV12WX"
+  },
+  {
+    "NOM": "TRIFLUCAN",
+    "CODE": "WX34YZ"
+  },
+  {
+    "NOM": "AVT",
+    "CODE": "YZ56AB"
+  },
+  {
+    "NOM": "KLONOPIN",
+    "CODE": "AB78CD"
+  },
+  {
+    "NOM": "HYDROXO 5000",
+    "CODE": "CD90EF"
+  },
+  {
+    "NOM": "DISPAMOX",
+    "CODE": "EF12GH"
+  },
+  {
+    "NOM": "MUSARIL",
+    "CODE": "GH34IJ"
+  },
+  {
+    "NOM": "PRETERAX",
+    "CODE": "IJ56KL"
+  },
+  {
+    "NOM": "CLAFORAN",
+    "CODE": "KL78MN"
+  },
+  {
+    "NOM": "RHINOFEBRAL",
+    "CODE": "MN90OP"
+  },
+  {
+    "NOM": "RIFASONE",
+    "CODE": "OP12QR"
+  },
+  {
+    "NOM": "FLUIBRON",
+    "CODE": "QR34ST"
+  },
+  {
+    "NOM": "AMOXIL",
+    "CODE": "ST56UV"
+  },
+  {
+    "NOM": "BENCLAMID",
+    "CODE": "UV78WX"
+  },
+  {
+    "NOM": "UNASYN",
+    "CODE": "WX90YZ"
+  },
+  {
+    "NOM": "LASILIX",
+    "CODE": "YZ12AB"
+  },
+  {
+    "NOM": "DILATOR",
+    "CODE": "AB34CD"
+  },
+  {
+    "NOM": "FORMOFTIL",
+    "CODE": "CD56EF"
+  },
+  {
+    "NOM": "GENTAGAM 120",
+    "CODE": "EF78GH"
+  },
+  {
+    "NOM": "UMILINE PROFIL 30 PEN",
+    "CODE": "GH90IJ"
+  },
+  {
+    "NOM": "BIRODOGYL",
+    "CODE": "IJ12KL"
+  },
+  {
+    "NOM": "GLEMA",
+    "CODE": "KL34MN"
+  },
+  {
+    "NOM": "SALAZOPYRIN",
+    "CODE": "MN56OP"
+  },
+  {
+    "NOM": "XANTHIUM LP",
+    "CODE": "OP78QR"
+  },
+  {
+    "NOM": "AIRLIX",
+    "CODE": "QR90ST"
+  },
+  {
+    "NOM": "GYNOMYK",
+    "CODE": "ST12UV"
+  },
+  {
+    "NOM": "AVASTIN",
+    "CODE": "UV34WX"
+  },
+  {
+    "NOM": "FLUMAX 6000 UI ANTI-XA/0.6ML",
+    "CODE": "WX56YZ"
+  },
+  {
+    "NOM": "PARAPLATINE",
+    "CODE": "YZ78AB"
+  },
+  {
+    "NOM": "TRIFAX IV",
+    "CODE": "AB90CD"
+  },
+  {
+    "NOM": "GLUCOVANCE",
+    "CODE": "CD12EF"
+  },
+  {
+    "NOM": "IXOR",
+    "CODE": "EF34GH"
+  },
+  {
+    "NOM": "PENICILLINE G 1 M UI DIAMANT",
+    "CODE": "GH56IJ"
+  },
+  {
+    "NOM": "DIPRIVAN",
+    "CODE": "IJ78KL"
+  },
+  {
+    "NOM": "NEORAL",
+    "CODE": "KL90MN"
+  },
+  {
+    "NOM": "XANTHIUM LP",
+    "CODE": "MN12OP"
+  },
+  {
+    "NOM": "AGIDERM",
+    "CODE": "OP34QR"
+  },
+  {
+    "NOM": "GYNO CANESTEN",
+    "CODE": "QR56ST"
+  },
+  {
+    "NOM": "CIPRO LP 500 MG",
+    "CODE": "ST78UV"
+  },
+  {
+    "NOM": "CIFLOXINE",
+    "CODE": "UV90WX"
+  },
+  {
+    "NOM": "SUPRIMASE",
+    "CODE": "WX12YZ"
+  },
+  {
+    "NOM": "MEDIVEINE",
+    "CODE": "YZ34AB"
+  },
+  {
+    "NOM": "PURSENNIDE",
+    "CODE": "AB56CD"
+  },
+  {
+    "NOM": "IDEOS",
+    "CODE": "CD78EF"
+  },
+  {
+    "NOM": "NORMACOL LAVEMENT AD",
+    "CODE": "EF90GH"
+  },
+  {
+    "NOM": "CRESTOR",
+    "CODE": "GH12IJ"
+  },
+  {
+    "NOM": "INHIBACE",
+    "CODE": "IJ34KL"
+  },
+  {
+    "NOM": "DIAMICRON",
+    "CODE": "KL56MN"
+  },
+  {
+    "NOM": "TEGRETOL",
+    "CODE": "MN78OP"
+  },
+  {
+    "NOM": "ANDOL",
+    "CODE": "OP90QR"
+  },
+  {
+    "NOM": "ZECLAR",
+    "CODE": "QR12ST"
+  },
+  {
+    "NOM": "OREX",
+    "CODE": "ST34UV"
+  },
+  {
+    "NOM": "REVLIMID 25 MG",
+    "CODE": "UV56WX"
+  },
+  {
+    "NOM": "FENAC",
+    "CODE": "WX78YZ"
+  },
+  {
+    "NOM": "LIPISTAT",
+    "CODE": "YZ90AB"
+  },
+  {
+    "NOM": "CALCIBRONAT",
+    "CODE": "AB12CD"
+  },
+  {
+    "NOM": "VITA C 1000",
+    "CODE": "CD34EF"
+  },
+  {
+    "NOM": "DUPHALAC",
+    "CODE": "EF56GH"
+  },
+  {
+    "NOM": "CIALIS",
+    "CODE": "GH78IJ"
+  },
+  {
+    "NOM": "EPHEDRYL",
+    "CODE": "IJ90KL"
+  },
+  {
+    "NOM": "ECLARAN",
+    "CODE": "KL12MN"
+  },
+  {
+    "NOM": "COQUELUSEDAL NOURRISSON",
+    "CODE": "MN34OP"
+  },
+  {
+    "NOM": "NICOPASS 1.5 MG SANS SUCRE REGLISSE MENTHE",
+    "CODE": "OP56QR"
+  },
+  {
+    "NOM": "MICROPAKINE LP 100 MG",
+    "CODE": "QR78ST"
+  },
+  {
+    "NOM": "CYTARABINE EBEWE",
+    "CODE": "ST90UV"
+  },
+  {
+    "NOM": "FLEET PHOSPHO-SODA",
+    "CODE": "UV12WX"
+  },
+  {
+    "NOM": "NEOMOX",
+    "CODE": "WX34YZ"
+  },
+  {
+    "NOM": "ANEXATE 0.5 MG / 5 ML",
+    "CODE": "YZ56AB"
+  },
+  {
+    "NOM": "RECOFOL",
+    "CODE": "AB78CD"
+  },
+  {
+    "NOM": "TOBRADEX",
+    "CODE": "CD90EF"
+  },
+  {
+    "NOM": "BAITANET G",
+    "CODE": "EF12GH"
+  },
+  {
+    "NOM": "CARDIX",
+    "CODE": "GH34IJ"
+  },
+  {
+    "NOM": "CLARELUX 500 µG",
+    "CODE": "IJ56KL"
+  },
+  {
+    "NOM": "BISOLVON",
+    "CODE": "KL78MN"
+  },
+  {
+    "NOM": "ANAFRANIL",
+    "CODE": "MN90OP"
+  },
+  {
+    "NOM": "AROMASINE",
+    "CODE": "OP12QR"
+  },
+  {
+    "NOM": "CLARADOL PLUS",
+    "CODE": "QR34ST"
+  },
+  {
+    "NOM": "VANTEC",
+    "CODE": "ST56UV"
+  },
+  {
+    "NOM": "CEFOTRIM",
+    "CODE": "UV78WX"
+  },
+  {
+    "NOM": "ACIVIR",
+    "CODE": "WX90YZ"
+  },
+  {
+    "NOM": "MADECASSOL",
+    "CODE": "YZ12AB"
+  },
+  {
+    "NOM": "MITOSYL IRRITATIONS",
+    "CODE": "AB34CD"
+  },
+  {
+    "NOM": "PANOXYL",
+    "CODE": "CD56EF"
+  },
+  {
+    "NOM": "MICROVAL",
+    "CODE": "EF78GH"
+  },
+  {
+    "NOM": "LAMICTAL",
+    "CODE": "GH90IJ"
+  },
+  {
+    "NOM": "GYNERGENE CAFEINE",
+    "CODE": "IJ12KL"
+  },
+  {
+    "NOM": "ADRENALINE 0,50 MG",
+    "CODE": "KL34MN"
+  },
+  {
+    "NOM": "SPASMOPRIV",
+    "CODE": "MN56OP"
+  },
+  {
+    "NOM": "COVERSYL",
+    "CODE": "OP78QR"
+  },
+  {
+    "NOM": "ZOMIG",
+    "CODE": "QR90ST"
+  },
+  {
+    "NOM": "GENHEVAC B",
+    "CODE": "ST12UV"
+  },
+  {
+    "NOM": "DIMAZOL",
+    "CODE": "UV34WX"
+  },
+  {
+    "NOM": "LUMIGAN 0.3MG/ML",
+    "CODE": "WX56YZ"
+  },
+  {
+    "NOM": "MOSCONTIN",
+    "CODE": "YZ78AB"
+  },
+  {
+    "NOM": "PENAMOX",
+    "CODE": "AB90CD"
+  },
+  {
+    "NOM": "GENTOSYL",
+    "CODE": "CD12EF"
+  },
+  {
+    "NOM": "CIPROFLOXACINE WIN 250 MG",
+    "CODE": "EF34GH"
+  },
+  {
+    "NOM": "PAROXETINE GT 20 MG",
+    "CODE": "GH56IJ"
+  },
+  {
+    "NOM": "TEGRETOL",
+    "CODE": "IJ78KL"
+  },
+  {
+    "NOM": "ANDOL",
+    "CODE": "KL90MN"
+  },
+  {
+    "NOM": "ZECLAR",
+    "CODE": "MN12OP"
+  },
+  {
+    "NOM": "OREX",
+    "CODE": "OP34QR"
+  },
+  {
+    "NOM": "REVLIMID 25 MG",
+    "CODE": "QR56ST"
+  },
+  {
+    "NOM": "CODOLIPRANE",
+    "CODE": "ST78UV"
+  },
+  {
+    "NOM": "PROFENID LP",
+    "CODE": "UV90WX"
+  },
+  {
+    "NOM": "SELSUN",
+    "CODE": "WX12YZ"
+  },
+  {
+    "NOM": "SUPRADYNE SANS SUCRE",
+    "CODE": "YZ34AB"
+  },
+  {
+    "NOM": "RILUTEK 50MG",
+    "CODE": "AB56CD"
+  },
+  {
+    "NOM": "TRIVASTAL",
+    "CODE": "CD78EF"
+  },
+  {
+    "NOM": "TETRACYCLINE LAPROPHAN",
+    "CODE": "EF90GH"
+  },
+  {
+    "NOM": "OKA-VINBLASTIN",
+    "CODE": "GH12IJ"
+  },
+  {
+    "NOM": "HUMALOG",
+    "CODE": "IJ34KL"
+  },
+  {
+    "NOM": "TENORMINE",
+    "CODE": "KL56MN"
+  },
+  {
+    "NOM": "FLOXIL",
+    "CODE": "MN78OP"
+  },
+  {
+    "NOM": "METHOTREXATE BIODIM",
+    "CODE": "OP90QR"
+  },
+  {
+    "NOM": "DOLIPRANE VITAMINE C",
+    "CODE": "QR12ST"
+  },
+  {
+    "NOM": "ZILDAM",
+    "CODE": "ST34UV"
+  },
+  {
+    "NOM": "PIPERACILLINE MYLAN",
+    "CODE": "UV56WX"
+  },
+  {
+    "NOM": "SYNNAX",
+    "CODE": "WX78YZ"
+  },
+  {
+    "NOM": "ODIA",
+    "CODE": "YZ90AB"
+  },
+  {
+    "NOM": "ACEPRIL",
+    "CODE": "AB12CD"
+  },
+  {
+    "NOM": "RECORMON",
+    "CODE": "CD34EF"
+  }
+]

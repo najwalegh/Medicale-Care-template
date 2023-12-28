@@ -2,9 +2,8 @@ import { useForm, useWatch } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import Input from "../utils/InputBlock";
-import InputRadio from "../utils/InputRadio";
 
-const RegisterForm = ({ loading, performRegister }) => {
+const RegisterForm = ({ performRegister, loading }) => {
   const { register, handleSubmit, formState, control, reset } = useForm({
     firstName: "",
     lastName: "",
@@ -23,11 +22,8 @@ const RegisterForm = ({ loading, performRegister }) => {
   });
 
   const onSubmit = (form) => {
-    console.log("form : ", form);
-    const { confirm_password, ...formDataWithoutConfirmPassword } = form;
-    performRegister(formDataWithoutConfirmPassword);
+    performRegister(form);
     reset();
-    alert("Form submitted!");
   };
   return (
     <>
@@ -105,7 +101,7 @@ const RegisterForm = ({ loading, performRegister }) => {
           </div>
 
           <div className="mb-5">
-            <label className="block mb-2 text-primary font-medium text-gray-900 dark:text-white">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               Your gender
             </label>
             <select

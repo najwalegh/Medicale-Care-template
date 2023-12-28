@@ -28,7 +28,7 @@ function Services() {
     if (error) {
       console.log("error : ", error);
     }
-  }, []);
+  }, [data]);
 
   return (
     <>
@@ -42,11 +42,7 @@ function Services() {
           </div>
         </div>
       </div>
-      {loading && (
-        <div className="flex items-center justify-center">
-          <Spinner />
-        </div>
-      )}
+     
       {error && (
         <div className="flex items-center justify-center">
           <AlertError
