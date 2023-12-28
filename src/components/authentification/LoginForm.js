@@ -15,7 +15,7 @@ const LoginForm = ({ performLogin, loading }) => {
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-900 rounded-lg">
-        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <form className="" onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-5">
