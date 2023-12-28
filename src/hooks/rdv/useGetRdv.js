@@ -3,11 +3,18 @@ import { ENDPOINTS } from "../EndPoints";
 import { useState } from "react";
 import { useAxios } from "../axios/useAxios";
 
-const rdv = async (axios) => {
-    const response = await axios.get(`${ENDPOINTS.RDV}`);
+// const rdv = async (axios) => {
+//     const response = await axios.get(`${ENDPOINTS.RDV}`);
+//     console.log(response.data+"not null test")
+//     return response;
+//   };
+
+  const consultation = async (axios) => {
+    const response = await axios.get(`${ENDPOINTS.CONSULTATION}`);
     console.log(response.data+"not null test")
     return response;
   };
+
 
   export const useGetRdv = () =>{
     const [data, setData] = useState({});
@@ -21,7 +28,7 @@ const rdv = async (axios) => {
       console.log("performRdv")
         try {
             setLoading(true);
-            const result = await rdv(axiosInstance);
+            const result = await consultation (axiosInstance);
             setData(result.data);
             console.log("data 3mrat "+ data)
           } catch (error) {

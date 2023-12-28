@@ -15,13 +15,13 @@ function formatEvents(apiData) {
 
   return apiData.map((event, index) => ({
     id: index,
-    title: event.type,
-    start: new Date(event.dateStart),
-    end: new Date(event.dateEnd),
+    title: event.description,
+    start: new Date(event.start_date),
+    end: new Date(event.end_date),
   }));
 }
 
-const MyCalendar = ({ data }) => {
+const MyCalendar = ({ data , performNewRdv}) => {
   const [currentView, setCurrentView] = useState(Views.MONTH); 
   const [eventsList, setEventsList] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
@@ -32,7 +32,6 @@ const MyCalendar = ({ data }) => {
     setEventsList(events);
   }, [data]);
 
- 
   const handleViewChange = (view) => {
     setCurrentView(view);
   };
@@ -41,21 +40,11 @@ const MyCalendar = ({ data }) => {
     setModalOpen(true);
     setStart(start);
     
-    // alert('start :'+start)
-    // const title = window.prompt("New Event name");
-    // if (title) {
-    //   var newEvent = {
-    //     start: start,
-    //     end: end,
-    //     title: title
-    //   };
-    //   setEventsList((prevEvents) => [...prevEvents, newEvent]);
-    // }
   }
 
   return (
     <div style={{ padding: '14px' }}>
-             {modalOpen && <Modal setOpenModal={setModalOpen} start={start}  />}
+             {modalOpen && <Modal setOpenModal={setModalOpen} start={start} performNewRdv={performNewRdv} />}
       <Calendar
         localizer={localizer}
         startAccessor="start"

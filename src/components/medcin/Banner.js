@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Banner() {
   const [medcinList, setMedcinList] = useState([]);
   const [showInfo, setShowInfo] = useState(null);
 
   useEffect(() => {
-    const idService="123"
+    const idService="656c49d284f07978d594e34c"
     axios.get(`http://localhost:8080/api/medcins/${idService}`).then((Response) => {
       console.log('Réponse du serveur:', Response.data);
       setMedcinList(Response.data);
@@ -23,11 +24,14 @@ function Banner() {
           <div className='flex flex-col items-center'>
             <img src={require('../../assets/logo.png')} className='w-full h-40 object-cover rounded-md' alt={medcin.role} />
             <h1 className='text-black text-xl font-bold mt-2 mb-4'>{medcin.first_name} {medcin.last_name}</h1>
-            <button
+            <Link to={`/rdv`}
+              state={{medcinId: medcin._id}} >
+              <button
                 className='bg-green-400 text-white px-4 py-2 rounded-md mt-2'
               >
                 select
               </button>
+            </Link>
           </div>
        
           {showInfo===index ? (

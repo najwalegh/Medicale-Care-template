@@ -3,5 +3,6 @@ export const ENDPOINTS = {
   REGISTER: "/auth/register",
   SERVICE: "/services",
   MEDCINLIST: "/medcin",
-  RDV:"/rdv"
+  RDV:"/rdv",
+  CONSULTATION:"/consultations"
 };
