@@ -9,8 +9,8 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Header from '../../components/Header';
 import App from '../../components/prescription/traitement';
-// import App2 from '../../components/consultation/AnalysisForm';
-// import App3 from '../../components/consultation/ScanForm';
+import App2 from '../../components/consultation/AnalysForm';
+import App3 from '../../components/consultation/ScanForm';
 import { useState } from 'react';
 
 const steps = [
@@ -22,12 +22,12 @@ const steps = [
   {
     label: 'Ordonnance d\'analyse',
     description: 'Prescrire des tests médicaux pour évaluer la santé.',
-    // component: <App2 />,
+    component: <App2 />,
   },
   {
     label: 'Ordonnance de scan',
     description: `Prescrire des examens d'imagerie médicale pour un diagnostic approfondi.`,
-    // component: <App3 />,
+    component: <App3 />,
   },
 ];
 

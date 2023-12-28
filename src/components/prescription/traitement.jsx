@@ -5,6 +5,7 @@ import PrescriptionForm from './PrescriptionForm';
 import PDFGenerator from './PDFGenerator';
 import jsPDF from 'jspdf';
 import medicinesData from '../../data/data.json';
+import axios from "axios";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -61,7 +62,25 @@ const handleRemoveFromPrescription = (medicineToRemove) => {
   setPrescription(updatedPrescription);
 };
 
-const handleGeneratePDF = () => {
+
+const handleGeneratePDF = async () => {
+  const pdfContent = generatePDF();
+
+  try {
+    const response = await axios.post('http://localhost:8080/api/createOrd', {
+      pdfContent,
+      consultationId: '657ddadf4fcd6a78e740872a', 
+      type: 'traitement',
+      date_creation: new Date(),
+    });
+
+    console.log('PDF saved successfully:', response.data);
+  } catch (error) {
+    console.error('Error saving PDF:', error.message);
+  }
+};
+
+const generatePDF = () => {
   const pdf = new jsPDF();
 
   prescription.forEach((med, index) => {
@@ -73,8 +92,9 @@ const handleGeneratePDF = () => {
 
     pdf.line(10, 45 + yOffset, 200, 45 + yOffset);
   });
-
   pdf.save('ordonnance.pdf');
+
+  return pdf.output('dataurl'); // Convert the content to a data URL
 };
 
 return (
