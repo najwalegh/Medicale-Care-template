@@ -105,7 +105,7 @@ const RegisterForm = ({ loading, performRegister }) => {
           </div>
 
           <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label className="block mb-2 text-primary font-medium text-gray-900 dark:text-white">
               Your gender
             </label>
             <select
