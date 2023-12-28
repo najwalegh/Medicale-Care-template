@@ -50,7 +50,12 @@ const handleMedicineSelect = (medicine) => {
 const handlePrescriptionUpdate = (prescriptionData, selectedMedicine) => {
   const updatedPrescription = selectedMedicines.map((med) => ({
     ...med,
-    prescriptionData,
+
+    prescriptionData: {
+      ...(prescriptionData.dosage && { dosage: prescriptionData.dosage }),
+      ...(prescriptionData.duration && { duration: prescriptionData.duration }),
+    },
+
   }));
 
   setPrescription([...prescription, ...updatedPrescription]);
@@ -86,10 +91,15 @@ const generatePDF = () => {
   prescription.forEach((med, index) => {
     const yOffset = index * 30;
 
+  
     pdf.text(`Médicament ${index + 1}: ${med.NOM}`, 10, 20 + yOffset);
-    pdf.text(`Dosage: ${med.DOSAGE1} ${med.UNITE_DOSAGE1}`, 20, 30 + yOffset);
-    pdf.text(`Durée: ${med.PRESENTATION}`, 20, 40 + yOffset);
-
+    if (med.prescriptionData.dosage) {
+      pdf.text(`Dosage: ${med.prescriptionData.dosage}`, 20, 30 + yOffset);
+    }
+    if (med.prescriptionData.duration) {
+      pdf.text(`Durée: ${med.prescriptionData.duration}`, 20, 40 + yOffset);
+    }
+  
     pdf.line(10, 45 + yOffset, 200, 45 + yOffset);
   });
   pdf.save('ordonnance.pdf');
@@ -117,20 +127,21 @@ return (
   <div className="w-1/2 p-4 bg-accent/80"> {/* Ajout de la couleur de fond pour la partie droite */}
     <h1 className="text-2xl font-primary mb-4">Médicaments sélectionnés :</h1>
     {prescription.length > 0 && (
-      <ul className="list-disc pl-4">
-        {prescription.map((med, index) => (
-          <li key={index} className="mb-2">
-            {med.NOM} - Dosage: {med.prescriptionData.dosage}, Durée: {med.prescriptionData.duration}
-            <button
-              onClick={() => handleRemoveFromPrescription(med)}
-              className="ml-2 text-red-500 hover:underline"
-            >
-              Supprimer
-            </button>
-          </li>
-        ))}
-      </ul>
-    )}
+    <ul className="list-disc pl-4">
+      {prescription.map((med, index) => (
+        <li key={index} className="mb-2">
+          {med.NOM} - {med.prescriptionData.dosage && `Dosage: ${med.prescriptionData.dosage}, `}
+          {med.prescriptionData.duration && `Durée: ${med.prescriptionData.duration}`}
+          <button
+            onClick={() => handleRemoveFromPrescription(med)}
+            className="ml-2 text-red-500 hover:underline"
+          >
+            Supprimer
+          </button>
+        </li>
+      ))}
+    </ul>
+  )}
     <PDFGenerator prescription={prescription} onGeneratePDF={handleGeneratePDF} />
   </div>
 </div>
