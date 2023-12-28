@@ -49,10 +49,12 @@ const handleMedicineSelect = (medicine) => {
 const handlePrescriptionUpdate = (prescriptionData, selectedMedicine) => {
   const updatedPrescription = selectedMedicines.map((med) => ({
     ...med,
+
     prescriptionData: {
       ...(prescriptionData.dosage && { dosage: prescriptionData.dosage }),
       ...(prescriptionData.duration && { duration: prescriptionData.duration }),
     },
+
   }));
 
   setPrescription([...prescription, ...updatedPrescription]);
@@ -69,6 +71,7 @@ const handleGeneratePDF = () => {
 
   prescription.forEach((med, index) => {
     const yOffset = index * 30;
+
   
     pdf.text(`Médicament ${index + 1}: ${med.NOM}`, 10, 20 + yOffset);
     if (med.prescriptionData.dosage) {
@@ -80,6 +83,7 @@ const handleGeneratePDF = () => {
   
     pdf.line(10, 45 + yOffset, 200, 45 + yOffset);
   });
+  
   pdf.save('ordonnance.pdf');
 };
 
@@ -118,7 +122,6 @@ return (
       ))}
     </ul>
   )}
-
     <PDFGenerator prescription={prescription} onGeneratePDF={handleGeneratePDF} />
   </div>
 </div>
