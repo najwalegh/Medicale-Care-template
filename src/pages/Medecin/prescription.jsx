@@ -11,7 +11,6 @@ import Header from '../../components/Header';
 import App from '../../components/prescription/traitement';
 // import App2 from '../../components/consultation/AnalysisForm';
 // import App3 from '../../components/consultation/ScanForm';
-import { useState } from 'react';
 
 const steps = [
   {
@@ -32,6 +31,7 @@ const steps = [
 ];
 
 function Prescription() {
+  
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {

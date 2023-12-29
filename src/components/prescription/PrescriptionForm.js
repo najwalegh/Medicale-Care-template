@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function PrescriptionForm({ selectedMedicines, onUpdate }) {
-  const [dosage, setDosage] = useState('');
-  const [duration, setDuration] = useState('');
+function PrescriptionForm({ selectedMedicines, onUpdate, prescriptionData }) {
+  const [dosage, setDosage] = useState(prescriptionData.dosage || '');
+  const [duration, setDuration] = useState(prescriptionData.duration || '');
+
+  useEffect(() => {
+    setDosage(prescriptionData.dosage || '');
+    setDuration(prescriptionData.duration || '');
+  }, [prescriptionData]);
 
   const handleUpdate = () => {
     selectedMedicines.forEach((medicine) => {
