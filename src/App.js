@@ -7,7 +7,7 @@ const App = () => {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
+        <div className="bg-site bg-no-repeat bg-cover overflow-hidden min-h-screen">
           <AppRoutes />
         </div>
       </BrowserRouter>

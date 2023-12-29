@@ -57,7 +57,14 @@ function AppRoutes() {
           </RenderToMedecin>
         }
       />
-      <Route path="/step" element={<Prescription />} />
+      {/* by consultation id */}
+      <Route path="/prescription" 
+        element={
+          <RenderToMedecin role={token?.user?.role}>
+            <Prescription />
+          </RenderToMedecin>
+          }
+        />
 
       <Route
         path="/admin"

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Tooltip } from "../utils/TooltipBtn";
 import { formatHour } from "../utils/FormatHour";
+import { Link } from 'react-router-dom';
 
 export const ConsultationCard = ({
   id,
@@ -32,6 +33,8 @@ export const ConsultationCard = ({
             <div>Results of the last consultation {result} </div>
           </div>
           <div className="flex flex-col justify-around">
+          <Link to={`/prescription`}
+          state={{id:id}} >
             <button
               type="button"
               onMouseEnter={handleShowInfo}
@@ -52,6 +55,7 @@ export const ConsultationCard = ({
               </svg>
               {showInfo && <Tooltip content={"commencer"} />}
             </button>
+            </Link>
             <button type="button" onClick={handleUpdateStatus}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

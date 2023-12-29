@@ -6,7 +6,7 @@ function MedicineList({ medicines, selectedMedicine, onSelect }) {
       <ul>
         {medicines.map((medicine) => (
           <li
-            key={medicine.CODE}
+            key={medicine.key}
             className={`cursor-pointer py-2 px-4 mb-2 rounded bg-accent/10 text-primary ${
               selectedMedicine && selectedMedicine.CODE === medicine.CODE
                 ? 'bg-blue-500 text-white font-bold'
@@ -15,7 +15,7 @@ function MedicineList({ medicines, selectedMedicine, onSelect }) {
             onClick={() => onSelect(medicine)}
           >
   
-            {medicine.NOM}
+            {medicine.name}
           </li>
         ))}
       </ul>

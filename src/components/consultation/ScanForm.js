@@ -58,20 +58,21 @@ const App3 = ({ onContinue, selectedData }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="libelle">Libellé:</label>
+        <label htmlFor="libelle" className="text-gray-500">Libellé:</label>
         <input
           type="text"
           id="libelle"
           value={libelle}
           onChange={(e) => setLibelle(e.target.value)}
+          className="border border-gray-400 rounded  text-gray-500 m-3 py-3 px-2 leading-tight focus:outline-none"
         />
 
-        <label htmlFor="description">Description:</label>
+        <label htmlFor="description"className="text-gray-500">Description:</label>
         <input
           type="text"
           id="description"
           style={{ color: 'black' }}
-
+          className="border border-gray-400 rounded text-gray-500 m-3 py-3 px-2 leading-tight focus:outline-none"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
