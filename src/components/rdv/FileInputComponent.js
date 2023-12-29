@@ -5,11 +5,11 @@ import React from "react";
 const FileInputComponent = () => {
   return (
     <div>
-      <label htmlFor="file1">Fichier 1</label>
-      <input type="file" id="file1" name="file1"  />
+      <label htmlFor="file1">Scanner Photos </label>
+      <input type="file" id="scanner" name="scanner"  />
 
-      <label htmlFor="file2">Fichier 2</label>
-      <input type="file" id="file2" name="file2" />
+      <label htmlFor="file2">Analyse Results</label>
+      <input type="file" id="analyse" name="analyse" />
     </div>
   );
 };

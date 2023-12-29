@@ -10,11 +10,13 @@ import { AlertError } from "../../components/utils/AlertError";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAddRdv } from "../../hooks/rdv/useAddRdv";
 import {useGetConsultsByDoctor} from "../../hooks/consultations/useGetConsultsByDoctor";
+import { useAddDoc } from "../../hooks/rdv/useAddDoc";
 
 function Rdv() {
   const location = useLocation();
   const {idDoctor} =location.state ?? {idDoctor : "65706937932fe08092d2525f"};
     const { data, loading, error, performNewRdv } = useAddRdv();
+    const { datadoc, loadingdoc, errordoc, performNewDoc } = useAddDoc();
     const { status, consultations } = useGetConsultsByDoctor(idDoctor);
   
       // useEffect(() => {
@@ -43,7 +45,7 @@ function Rdv() {
       )}
       {
       consultations &&
-            <MyCalendar data={consultations} performNewRdv={performNewRdv} idDoctor={idDoctor}/>
+            <MyCalendar data={consultations} performNewRdv={performNewRdv} performNewDoc={performNewDoc} datadoc={datadoc} idDoctor={idDoctor}/>
       }
           <Footer />
         </>

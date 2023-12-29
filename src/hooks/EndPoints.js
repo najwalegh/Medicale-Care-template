@@ -8,4 +8,5 @@ export const ENDPOINTS = {
   CONSULTATION:"/consultations",
   USERS: "/users",
   MEDCINLIST: "/medcins",
+  DOC:"/doc"
 };

@@ -21,7 +21,7 @@ function formatEvents(apiData) {
   }));
 }
 
-const MyCalendar = ({ data , performNewRdv,idDoctor}) => {
+const MyCalendar = ({ data , performNewRdv,performNewDoc,datadoc,idDoctor}) => {
   const [currentView, setCurrentView] = useState(Views.MONTH); 
   const [eventsList, setEventsList] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
@@ -46,7 +46,7 @@ const MyCalendar = ({ data , performNewRdv,idDoctor}) => {
 
   return (
     <div style={{ padding: '14px' }}>
-             {modalOpen && <Modal setOpenModal={setModalOpen} start={start} end={end} performNewRdv={performNewRdv} idDoctor={idDoctor}/>}
+             {modalOpen && <Modal setOpenModal={setModalOpen} start={start} end={end} performNewRdv={performNewRdv} performNewDoc={performNewDoc} datadoc={datadoc} idDoctor={idDoctor}/>}
       <Calendar
         localizer={localizer}
         startAccessor="start"

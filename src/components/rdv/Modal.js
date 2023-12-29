@@ -4,7 +4,7 @@ import FileInputComponent from "./FileInputComponent";
 import { useForm } from "react-hook-form";
 import { useTokenContext } from "../../context/AuthContextProvider";
 
-function Modal({ setOpenModal , start, end ,performNewRdv,idDoctor }) {
+function Modal({ setOpenModal , start, end ,performNewRdv,performNewDoc,datadoc,idDoctor }) {
   const [nextForm,setNextForm] = useState(false);
   const { token } = useTokenContext();
   const { register, handleSubmit, formState, control, reset } = useForm({
@@ -16,7 +16,9 @@ function Modal({ setOpenModal , start, end ,performNewRdv,idDoctor }) {
     day:start.toISOString().substring(0, 10),
     hour: start.getHours(),
     appointmentType: "Consultation",
-    diseases: []
+    diseases: [],
+    scanner: null,
+    analyse: null,
   });
 
 
@@ -47,23 +49,36 @@ function Modal({ setOpenModal , start, end ,performNewRdv,idDoctor }) {
     }
   };
   
+  const handleChangeFile = (e, fieldName) => {
+    const file = e.target.files[0];
+    setFormData({ ...formData, [fieldName]: file });
+  };
+
   const handleNext = () => {
     setNextForm(true);
     
   };
+
   const onSubmit = (form) => {
     console.log("Formulaire soumis :", form);
-    alert("day "+formData.day+formData.hour)
+    const documentData ={
+      scanner :formData.scanner,
+      analyse : formData.analyse
+    };
 
+    performNewDoc(documentData);
+    alert("id "+datadoc.id);
     const consultationData = {
       description: formData.appointmentType, 
       id_medcin: idDoctor, 
-      // id_doc: "3", 
+      id_doc: datadoc._id, 
       patient: (token.user.id), 
-      startDate: start,
-      endDate: start+"1",
+      startDate: start, 
+      endDate: end,
     };
+    
     performNewRdv(consultationData);
+
     setOpenModal(false);
   };
 
@@ -198,7 +213,13 @@ function Modal({ setOpenModal , start, end ,performNewRdv,idDoctor }) {
                   </label>
                 </div>
               </div>
-              <FileInputComponent /*onChange={yourFileChangeHandler}*/ />
+              <div>
+                <label htmlFor="file1">Scanner Photos </label>
+                <input type="file" id="scanner" name="scanner"  onChange={(e) => handleChangeFile(e, 'scanner')} />
+
+                <label htmlFor="file2">Analyse Results</label>
+                <input type="file" id="analyse" name="analyse"  onChange={(e) => handleChangeFile(e, 'analyse')}/>
+              </div>
            </div>
           {/* </form>            */}
         </div>
