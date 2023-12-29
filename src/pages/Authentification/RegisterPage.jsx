@@ -10,18 +10,17 @@ export default function RegisterPage() {
   const { insertUserMutation } = useRegister();
   const navigate = useNavigate();
 
-  const performRegister = async (form) => {
-    insertUserMutation.mutateAsync(form, {
-      onSuccess: () => {
-        alert("Successfuly saved ");
-        navigate("/sign-in");
+  const performRegister = async (formData) => {
+    insertUserMutation.mutateAsync(formData, {
+      onSuccess: (data) => {
+        alert("Form submitted!");
+        navigate("/");
       },
       onError: (data) => {
         alert("Error: " + data.message);
       },
     });
   };
-
   return (
     <>
       <Header />
@@ -29,7 +28,7 @@ export default function RegisterPage() {
         <div className="grid-cols-8  md:grid-cols-1 ">
           <HeaderForm title={"SIGN-UP"} description={"Fill All The field !"} />
           <RegisterForm
-            insertUserMutation={performRegister}
+            performRegister={performRegister}
             loading={insertUserMutation.isLoading}
           />
         </div>
