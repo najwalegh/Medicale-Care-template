@@ -10,9 +10,6 @@ import { motion } from "framer-motion";
 import {fadeIn} from '../variants'
 import { Link } from 'react-router-dom';
 
-import { fadeIn } from "../variants";
-import { Link } from "react-router-dom";
-
 function Banner({ token, title, description, btnText, btnLink, services }) {
   return (
     <section
