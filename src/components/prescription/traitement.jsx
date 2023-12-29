@@ -59,10 +59,10 @@ const App = () => {
         gender === "FEMALE" &&
         selectedMedicines.some((med) => med.category === 'Anti-inflammatoire')
       ) {
-        return "Si le sujet est un sujet féminin et qui va prendre des anti-inflammatoires, il faut envisager de l’informer qu’elle ne doit pas être enceinte ou envisager de l’être au moins 3 mois après arrêt des médicaments.";
+        return "La patiente est féminin elle faut pas prendre des anti-inflammatoires, il faut envisager de l’informer qu’elle ne doit pas être enceinte ou envisager de l’être au moins 3 mois après arrêt des médicaments.";
       }
     }
-    
+
     // Condition d'exemple 4
     if (
       gender === "FEMALE" &&
