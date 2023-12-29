@@ -70,12 +70,16 @@ const App3 = ({ onContinue, selectedData }) => {
         <input
           type="text"
           id="description"
+          style={{ color: 'black' }}
+
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
 
       </form>
-      <button onClick={handleGenerateDocument}>Générer le document PDF</button>
+      <br />
+      <button type="button" onClick={handleGenerateDocument} className="btn btn-lg">Generate PDF </button><br />
+
     </div>
   );
 };

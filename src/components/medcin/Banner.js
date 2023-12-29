@@ -1,52 +1,71 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useGetMedcin } from "../../hooks/medcins/useGetMedcin";
-import { useParams } from 'react-router-dom';
+import { bgcolor } from '@mui/system';
+import React, { useState } from 'react';
 
-
-function Banner({serviceId,data}) {
-  const [medcinList, setMedcinList] = useState([]);
+function Banner({ data }) {
   const [showInfo, setShowInfo] = useState(null);
 
   return (
     <ul className='flex flex-wrap justify-center'>
-      {data && data.length && data.map((medcin, index) => (
-        <li key={index} className='m-4 p-4 bg-white shadow-md rounded-md w-64'>
-          <div className='flex flex-col items-center'>
-            <img src={require('../../assets/logo.png')} className='w-full h-40 object-cover rounded-md' alt={medcin.role} />
-            <h1 className='text-black text-xl font-bold mt-2 mb-4'>{medcin.first_name} {medcin.last_name}</h1>
-            <button
-                className='bg-green-400 text-white px-4 py-2 rounded-md mt-2'
-              >
-                select
-              </button>
-          </div>
-       
-          {showInfo===index ? (
-            <div className='text-center'>
+      {data &&
+        data.length &&
+        data.map((medcin, index) => (
+          <li
+            key={index}
+            className={`m-4 p-4 bg-white shadow-md rounded-md w-64 ${
+              showInfo === index ? 'expanded-card' : ''
+            }`}
+          >
+            <div className='flex flex-col items-center'>
+              <img
+                src={require('../../assets/logo.png')}
+                className='w-full h-40 object-cover rounded-md'
+                alt={medcin.role}
+              />
+              <h1 className='text-black text-xl font-bold mt-2 mb-4'>
+                {medcin.first_name} {medcin.last_name}
+              </h1>
               <button
-                className='bg-blue-500 text-white px-4 py-2 rounded-md mt-2'
+ className='text-white px-4 py-2 rounded-md mt-2'
+ style={{ backgroundColor: '#AFFFDD' }}              >
+                Select
+              </button>
+            </div>
+
+            {showInfo === index && (
+              <div className='text-center'>
+            <button
+                className='text-white px-4 py-2 rounded-md mt-2'
+                style={{ backgroundColor: '#197dD2' }}
                 onClick={() => setShowInfo(null)}
               >
-                Hide Info
-              </button>
-              <h1 className='text-black text-xl font-bold mt-2 mb-4'>Phone: {medcin.phone}</h1>
-              <h1 className='text-black text-xl font-bold mt-2 mb-4'>Address: {medcin.adress}</h1>
-            </div>
-          ) : (
-            <div className='text-center'>
+ 
 
-            <button
-              className='bg-blue-500 text-white px-4 py-2 rounded-md mt-2'
-              onClick={() => setShowInfo(index)}
-            >
-              More Info
-            </button>
-            </div>
+                  Hide Info
+                </button>
+                <div>
+                  <h1 className='text-black font-bold mt-2 mb-1'>Phone: </h1>
+                  <h3 className='text-black'>{medcin.phone}</h3>
+                </div>
+                <div>
+                  <h1 className='text-black font-bold mt-2 mb-1'>Address: </h1>
+                  <h3 className='text-black'>{medcin.adress}</h3>
+                </div>
+              </div>
+            )}
 
-          )}
-        </li>
-      ))}
+            {showInfo !== index && (
+              <div className='text-center'>
+                <button
+ className='text-white px-4 py-2 rounded-md mt-2'
+ style={{ backgroundColor: '#197dD2' }}
+                   onClick={() => setShowInfo(index)}
+                >
+                  More Info
+                </button>
+              </div>
+            )}
+          </li>
+        ))}
     </ul>
   );
 }

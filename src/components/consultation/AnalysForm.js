@@ -140,7 +140,7 @@ const App2 = ({ onContinue, selectedChoices }) => {
           </div>
         ))}
       </div>
-      <button onClick={handleGenerateDocument}>Generate PDF Document</button>
+      <button type="button" onClick={handleGenerateDocument} className="btn btn-lg">Generate PDF </button><br />
     </div>
   );
 };
