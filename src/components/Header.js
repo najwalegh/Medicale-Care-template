@@ -1,25 +1,44 @@
-import React from 'react'
-import logo from '../assets/logo.png'
+import React from "react";
+import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
+import { useTokenContext } from "../context/AuthContextProvider";
 
-function Header() {
+function Header({ childreen }) {
+  const { token } = useTokenContext();
   return (
-    <header className=''>
-    <div className='container mx-auto'>
-      <div className='flex justify-between items-center'>
-        {/* {LOGO} */}
-        <a href='#'>
-          <img src={logo} alt='logo' style={{width:80}}></img>
-        </a>
-        <div>
-        {/* {button} */}
-        <button className='btn-lg'>Connexion</button>
-        <button className='btn-lg'>Inscription</button>
+    <header>
+      <div className="container mx-auto border-none">
+        <div className="flex justify-between items-center">
+          {/* {LOGO} */}
+          <Link to={"/"}>
+            <img src={logo} alt="logo" style={{ width: 80 }}></img>
+          </Link>
+          {!token && (
+            <>
+              <div>
+                {/* {button} */}
+                <Link to={"/sign-in"}>
+                  <button className=" btn-lg ">Connexion</button>
+                </Link>
+                <Link to={"/sign-up"}>
+                  <button className="btn-lg ">Inscription</button>
+                </Link>
+              </div>
+            </>
+          )}
+          {token && (
+            <div>
+              {childreen && childreen}
+              <button className="btn-lg">Session</button>
+              <Link to={"/logout"}>
+                <button className="btn-lg ">Déconnexion</button>
+              </Link>
+            </div>
+          )}
         </div>
-
       </div>
-    </div>
-  </header>
-  )
+    </header>
+  );
 }
 
-export default Header
+export default Header;

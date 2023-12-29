@@ -1,17 +1,17 @@
-import './App.css';
-import Header from './components/Header';
-import Banner from './components/Banner';
-import Nav from './components/Nav';
-import Features from './components/Features';
-import Footer from './components/Footer';
-import Services from './pages/Patient/servicesPage';
-import AppRoutes from './routes';
-function App() {
-  return (
-    <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
-      <AppRoutes />
-    </div>
+import React from "react";
+import { AuthProvider } from "./context/AuthContextProvider";
+import AppRoutes from "./routes";
+import { BrowserRouter, Route } from "react-router-dom";
 
+const App = () => {
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
+          <AppRoutes />
+        </div>
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 
