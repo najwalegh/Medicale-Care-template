@@ -8,6 +8,7 @@ import { LogoutPage } from "../pages/Authentification/LogoutPage";
 import { MainPage } from "../pages/Medecin/MainPage";
 import { RenderToMedecin } from "../components/RenderToMedecin";
 import { useTokenContext } from "../context/AuthContextProvider";
+import Prescription from "../pages/Medecin/prescription";
 import { ConsultationsPage } from "../pages/Medecin/ConsultationsPage";
 import { RenderToAssistant } from "../components/RenderToAssistant";
 import AdminHome from "../pages/Assistant/homePage";
@@ -56,6 +57,8 @@ function AppRoutes() {
           </RenderToMedecin>
         }
       />
+      <Route path="/step" element={<Prescription />} />
+
       <Route
         path="/admin"
         element={

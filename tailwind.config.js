@@ -23,8 +23,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#777777", //gris
-        accent: "#127eb9", // bleu
+        primary: '#777777', //gris
+        accent: '#127eb9', // bleu
       },
       backgroundImage: {
         site: "url('./assets/Rainbow.png')",
