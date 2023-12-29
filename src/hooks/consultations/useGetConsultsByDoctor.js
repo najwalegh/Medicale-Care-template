@@ -4,11 +4,9 @@ import { useAxios } from "../axios/useAxios";
 import { useEffect } from "react";
 
 const fetchConsultsFn = async (axios, idMedecin) => {
-  const response = await axios.get(ENDPOINTS.CONSULTS, {
-    params: {
-      idDoctor: idMedecin,
-    },
-  });
+  const response = await axios.get(
+    `${ENDPOINTS.CONSULTS}/medecin/${idMedecin}`
+  );
   return response;
 };
 

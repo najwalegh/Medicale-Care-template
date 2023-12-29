@@ -10,50 +10,67 @@ import { RenderToMedecin } from "../components/RenderToMedecin";
 import { useTokenContext } from "../context/AuthContextProvider";
 import Prescription from "../pages/Medecin/prescription";
 import { ConsultationsPage } from "../pages/Medecin/ConsultationsPage";
+import { RenderToAssistant } from "../components/RenderToAssistant";
+import AdminHome from "../pages/Assistant/homePage";
+import { ConsultationServicePage } from "../pages/Assistant/ConsultationServicePage";
+import UsersPage from "../pages/Assistant/UsersPage";
+import { AddUserPage } from "../pages/Assistant/addUserPage";
 
 function AppRoutes() {
   const { token } = useTokenContext();
-  console.log("token : ", token);
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <RenderToMedecin role={token?.user?.role}>
-                <Navigate to={"/medecinPage"} />
-              </RenderToMedecin>
-              <Home />
-            </>
-          }
-        />
-        <Route path="/medcins" element={<SpaceMedcin />} />
-        <Route path="/sign-in" element={<LoginPage />} />
-        <Route path="/sign-up" element={<RegisterPage />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/logout" element={<LogoutPage />} />
-        <Route
-          path="/consultations"
-          element={
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
             <RenderToMedecin role={token?.user?.role}>
-              {" "}
-              <ConsultationsPage />
+              <Navigate to={"/medecinPage"} />
             </RenderToMedecin>
-          }
-        />
+            <RenderToAssistant role={token?.user?.role}>
+              <Navigate to={"/admin"} />
+            </RenderToAssistant>
+            <Home />
+          </>
+        }
+      />
+      <Route path="/medcins" element={<SpaceMedcin />} />
+      <Route path="/sign-in" element={<LoginPage />} />
+      <Route path="/sign-up" element={<RegisterPage />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/logout" element={<LogoutPage />} />
+      <Route
+        path="/consultations"
+        element={
+          <RenderToMedecin role={token?.user?.role}>
+            {" "}
+            <ConsultationsPage />
+          </RenderToMedecin>
+        }
+      />
 
-        <Route
-          path="/medecinPage"
-          element={
-            <RenderToMedecin role={token?.user?.role}>
-              <MainPage />
-            </RenderToMedecin>
-          }
-        />
-        <Route path="/step" element={<Prescription />}/>
-      </Routes>
-    </BrowserRouter>
+      <Route
+        path="/medecinPage"
+        element={
+          <RenderToMedecin role={token?.user?.role}>
+            <MainPage />
+          </RenderToMedecin>
+        }
+      />
+      <Route path="/step" element={<Prescription />} />
+
+      <Route
+        path="/admin"
+        element={
+          <RenderToAssistant role={token?.user?.role}>
+            <AdminHome />
+          </RenderToAssistant>
+        }
+      />
+      <Route path="/admin/users" element={<UsersPage />} />
+      <Route path="/admin/services" element={<ConsultationServicePage />} />
+      <Route path="/admin/new-user" element={<AddUserPage token={token} />} />
+    </Routes>
   );
 }
 
